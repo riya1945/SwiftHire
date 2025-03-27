@@ -1,13 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
 import React from "react";
-import Home from "./Home"; 
+import Login from "./Login"; 
 
 function App() {
   return (
     <div className="App">
     
-     <Home />
+     <Login />
     </div>
   );
 }
