@@ -1,0 +1,173 @@
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+.name{
+    
+    font-weight: bold;
+    font-size: 20px;
+}
+nav{
+    background-color: dodgerblue;
+    height:75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    color: white;
+
+}
+.signup,.login-btn{
+    height: 40px;
+    width:100px;
+    border-radius: 7px;
+}
+.signup{
+    background-color: white;
+    color:dodgerblue;
+
+}
+.login-btn{
+    background-color: blue;
+    color:white;
+}
+h1{
+    font-size: 45px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.left{
+    width: 50vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.insideleft{
+    background-color: blueviolet;
+    width: 70%;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+}
+.getstarted {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: white;
+    color: blueviolet;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 7px;
+    width:200px;
+    font-size:23px;
+}.container {
+    display: flex;
+    height: 89vh;
+}
+
+h2{
+    font-size: 30px;
+    font-weight: bold;
+}
+.img1,.img2,.img3,.img4{
+    height:670px;
+    width:400px;
+}
+.perfect_job, .interview {
+    display: flex;
+    flex-direction: row-reverse; /* Image on the right */
+    align-items: center;
+    gap: 20px;
+}
+
+.progess, .resume {
+    display: flex;
+    flex-direction: row; /* Image on the left */
+    align-items: center;
+    gap: 5px;
+   
+}
+
+.img1, .img2, .img3, .img4 {
+    flex-shrink: 0; /* Ensure images don't shrink */
+}
+
+.perfect_cont, .progess_cont, .interview_cont, .resume_cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:16px;
+
+}
+
+.perfect_job h2, .progess h2, .interview h2, .resume h2 {
+    margin-bottom: 10px;
+}
+.content-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 100px;
+}
+
+/* Image on Right */
+.right-image {
+    flex-direction: row;
+}
+
+/* Image on Left */
+.left-image {
+    flex-direction: row-reverse;
+}
+
+.text-content {
+    width: 50%;
+    padding: 20px;
+}
+
+.image-content {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+.job_search{
+    height:650px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+.jobs{
+    height:400px;
+    width:50%;
+    padding:40px;
+    border-radius: 15px;
+    background-color:blueviolet;
+    color:white;
+    border: none;
+}
+#start-tracking{
+    height: 60px;
+    width:180px;
+    background-color: aliceblue;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    color:white;
+    background-color:blueviolet;
+    border:2px solid white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+   
+}
+.text-interview{
+    background-color:#D2ECFA;
+    padding: 25px;
+    border-radius: 25px;
+    box-shadow: 20px;
+
+}
