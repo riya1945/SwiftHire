@@ -1,6 +1,6 @@
 import './Login.css'
 
-const Home=()=>{
+const Login=()=>{
 return(
     <div className="login-cont">
         <div className="login">
