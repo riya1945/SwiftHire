@@ -1,0 +1,145 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #ffffff;
+}
+/* Sidebar Menu */
+.Menu_options {
+    width: 200px;
+    height: 100vh; /* Full height */
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    overflow-y: scroll;
+}
+
+/* Inner menu */
+.inner_menu {
+    width: 100%;
+    height: calc(100vh - 50px); /* Adjusting height dynamically */
+    /* background-color: aquamarine; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+    gap: 15px;
+    overflow-y: auto; /* Scrollable if content overflows */
+}
+
+/* Common styles for menu items */
+.MY_overview, .My_applications, .Interviews, .Settings {
+    height: 120px;
+    width: 80%;
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+/* Application Status */
+.Application_Status {
+    height: 500px;
+    width: 90%;
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+/* Inside application status */
+.inside_app {
+    height: 240px;
+    width: 100%;
+    /* background-color: blueviolet; */
+}
+
+/* Upcoming Interviews */
+.Upcoming_interviews {
+    height: 100vh;
+    width: 90%;
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+/* Show upcoming interviews */
+/* Dashboard Container */
+.dashboard_container {
+    display: flex;
+    height: 80vh;
+  }
+  
+  /* Job Search Section */
+  .job_search {
+    flex: 1;
+    padding: 20px;
+    background-color:#f8f9fa;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+   
+  }
+  
+  /* Job Search Header */
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .application {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  /* Search Container */
+  .middle {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .middle input {
+    flex: 0 0 auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .search,
+  .filter {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    height:45px;
+    width: 100px;
+  }
+  .inner_job{
+    height: 270px;
+    width:50%;
+    /* background-color:; */
+    padding:25px;
+    border-radius: 10px;
+    border:2px solid black;
+    margin-top: -270px;
+  
+  }
+  .search-input{
+    width:300px;
+  }

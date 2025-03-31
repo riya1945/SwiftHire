@@ -20,7 +20,7 @@ const Home=() =>{
         <li>Contact</li></ul>
           </div> */}
           <button className='login-btn' onClick={() => navigate("/login")}>Log in</button>
-          <button className='signup'>Signup</button>
+          <button className='signup' onClick ={()=>navigate("/analytics")}>Signup</button>
         </div>
       </nav>
       <div className='container'>
