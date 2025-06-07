@@ -1,105 +1,83 @@
-import React from 'react'
+import React from 'react';
 import { useNavigate } from "react-router-dom";
-import './Home.css'
-const Home=() =>{
+import styles from './Home.css';
+
+const Home = () => {
   const navigate = useNavigate();
 
   return (
-    <div>
-      <nav>
-        <div className='name'>
-          <img src="" alt="" />
-          SwiftHire
-        </div>
+    <div className='job-tracker'>
+    <div className="container">
+      <header className="header">
+        <div className="logo">SwiftHire</div>
         <div>
-          {/* <div>
-          <ul className="nav-links">
-        <li>Home</li>
-        <li>About</li>
-        <li>Services</li>
-        <li>Contact</li></ul>
-          </div> */}
-          <button className='login-btn' onClick={() => navigate("/login")}>Log in</button>
-          <button className='signup' onClick ={()=>navigate("/analytics")}>Signup</button>
+          <button className='btn-secondary' onClick={() => navigate("/login")}>📊 Login</button>
         </div>
-      </nav>
-      <div className='container'>
-        <div className='left'>
-          <div className="insideleft">
-          
-          <h1>Track Your Applications 
-            <br />Like a Pro with 
-            <br />Job Tracker</h1>
-          <p className='para'>Are you still tracking jobs in Excel or Google Sheets? 
-            Track and manage your job listings, applications, 
-            and interviews all in one place. It's easy. It's efficient.</p>
-          <button className='getstarted'>Check it out?</button>
-          </div>
-        </div>
-        <div>
-          <div className='image'>
-            <img src="https://static.jobscan.co/blog/uploads/bigger-tracker.webp" alt="hh"  height="680px" width="600px" />
-          </div>
-        </div>
-      </div>
-
-      <section>
-        {/* IMAGE ON RIGHT - Image 1 */}
-        <div className='content-row right-image'>
-          <div className="text-content text-interview'">
-            <h2>Get the ideal job</h2>
-            <p>Get personalized job listings and track your applications in one place.<br/>
-              Just enter a job title, keyword, or location to discover opportunities that align<br/> with your career goals.<br/>
-              View job listings, tailor your resume, and keep track of your progress—all <br/>within your job tracker dashboard.</p>
-          </div>
-          <div className="image-content">
-            <img src="https://static.jobscan.co/blog/uploads/bigger-tracker.webp" alt="Job Tracking" height="540px" width="440px" />
-          </div>
+      </header>
+      
+      <section className="hero">
+        <div className="hero-content">
+          <h1>Smart job tracking, organized success</h1>
+          <p>Take control of your job search with intelligent tracking, automated reminders, and insightful analytics to land your dream role.</p>
         </div>
 
-        {/* IMAGE ON LEFT - Image 2 */}
-        <div className='content-row left-image text-interview'>
-          <div className="image-content">
-            <img src="https://static.jobscan.co/blog/uploads/bigger-tracker.webp" alt="Progress Tracking" height="540px" width="440px" />
-          </div>
-          <div className="text-content ">
-            <h2>Monitor your progress</h2>
-            <p>Monitor every job application and visualize your journey <br/>from Applied to Interviewed with an intuitive progress tracker.<br/> Easily update the status of your applications and stay organized with<br/> detailed insights into each step of the process.</p>
+        <div className="dashboard-mockup">
+          <div className="floating-elements">
+            <div className="glass-card stats-card">
+              <div className="card-title">Total Applications</div>
+              <div className="card-content">47</div>
+              <div className="card-subtitle">+12 this week</div>
+            </div>
+
+            <div className="glass-card progress-card">
+              <div className="card-title">Application Progress</div>
+              <div className="progress-bar">
+                <div className="progress-fill"></div>
+              </div>
+              <div className="card-subtitle">68% completion rate</div>
+              <div className="status-badge status-offer">3 Offers</div>
+              <div className="status-badge status-interview">8 Interviews</div>
+            </div>
+
+            <div className="glass-card notification-card">
+              <div className="card-title">📅 Upcoming</div>
+              <div className="card-content">Interview Tomorrow</div>
+              <div className="card-subtitle">Google - Software Engineer</div>
+              <div className="status-badge status-interview">2:00 PM</div>
+            </div>
+
+            <div className="glass-card recent-card">
+              <div className="card-title">🎯 Recent Activity</div>
+              <div className="card-content">Applied</div>
+              <div className="card-subtitle">Meta - Product Manager</div>
+              <div className="status-badge status-applied">2 hours ago</div>
+            </div>
           </div>
         </div>
+      </section>
 
-        {/* IMAGE ON RIGHT - Image 3 */}
-        <div className='content-row right-image '>
-          <div className="text-content '">
-            <h2>Be updated of your interviews</h2>
-            <p>Stay prepared for every interview with automated reminders, scheduled meetings,<br/> and recruiter interactions in a centralized view. Ensure you <br/>never miss out on a great opportunity by<br/> managing all interview details efficiently.</p>
-          </div>
-          <div className="image-content">
-            <img src="https://static.jobscan.co/blog/uploads/bigger-tracker.webp" alt="Interview Updates" height="540px" width="440px" />
-          </div>
+      <section className="features">
+        <div className="feature-card">
+          <span className="feature-icon">🚀</span>
+          <h3>Smart Application Tracking</h3>
+          <p>Stay organized with a centralized view of all your job applications. Easily track statuses, interview stages, and follow-ups from one intuitive dashboard.</p>
         </div>
 
-        
-        <div className='content-row left-image  text-interview'>
-          <div className="image-content ">
-            <img src="https://static.jobscan.co/blog/uploads/bigger-tracker.webp" alt="Resume Optimization" height="540px" width="440px" />
-          </div>
-          <div className="text-content">
-            <h2>Optimize your resume with ATS insights</h2>
-            <p>Boost your chances of landing a job by getting your ATS resume <br/>score for every application. Instantly check how<br/> well your resume matches the job description and optimize <br/>it for maximum visibility before applying. Get real-time<br/> feedback to improve your resume and stand out to recruiters.</p>
-          </div>
+        <div className="feature-card">
+          <span className="feature-icon">📊</span>
+          <h3>Job Hunt Analytics</h3>
+          <p>Gain valuable insights into your job search. Analyze response rates, interview outcomes, and application trends to improve your strategy over time.</p>
         </div>
 
-        <div className="job_search">
-          <div className='jobs '>
-          <h2>Streamline Your Job Search Effortlessly</h2>
-          <p>Stay organized and in control as you work toward landing <br/>your dream job. Track applications, manage interviews, and<br/> optimize your resume—all in one place.
-          <br/>Eliminate stress and save time with an intuitive job tracker<br/> that helps you visualize your progress, get ATS resume<br/> scores, and stay on top of deadlines.</p>
-          <button id="start-tracking">Start tracking</button>
-        </div></div>
+        <div className="feature-card">
+          <span className="feature-icon">🎯</span>
+          <h3>Goal Management</h3>
+          <p>Set personal application goals and monitor your progress with visual trackers. Stay motivated and consistent throughout your job search journey.</p>
+        </div>
       </section>
     </div>
-  )
-}
+    </div>
+  );
+};
 
 export default Home;
