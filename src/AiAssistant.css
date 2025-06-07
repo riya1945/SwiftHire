@@ -1,0 +1,15 @@
+
+.outer{
+   border:1px solid black;
+   width:90%;
+   display: flex;
+   justify-content: center;
+   height: 100vh;
+   
+}
+.inner{
+    height :200px;
+    width:70%;
+    border:2px solid black;
+    margin-top: 5px;
+}
