@@ -1,145 +1,470 @@
-* {
-    padding: 0;
+/* General Body and Container Styles */
+body {
+    background-color: #f8f9fa; /* Light background for the entire page */
+    font-family: 'Inter', sans-serif; /* Using a modern sans-serif font */
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
-body{
-    background-color: #ffffff;
-}
-/* Sidebar Menu */
-.Menu_options {
-    width: 200px;
-    height: 100vh; /* Full height */
-    /* background-color: blue; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 10px;
-    overflow-y: scroll;
+
+.min-h-screen {
+    min-height: 100vh;
 }
 
-/* Inner menu */
-.inner_menu {
-    width: 100%;
-    height: calc(100vh - 50px); /* Adjusting height dynamically */
-    /* background-color: aquamarine; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 0;
-    gap: 15px;
-    overflow-y: auto; /* Scrollable if content overflows */
-}
-
-/* Common styles for menu items */
-.MY_overview, .My_applications, .Interviews, .Settings {
-    height: 120px;
-    width: 80%;
-    background-color: antiquewhite;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-}
-
-/* Application Status */
-.Application_Status {
-    height: 500px;
-    width: 90%;
-    background-color: antiquewhite;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-}
-
-/* Inside application status */
-.inside_app {
-    height: 240px;
-    width: 100%;
-    /* background-color: blueviolet; */
-}
-
-/* Upcoming Interviews */
-.Upcoming_interviews {
-    height: 100vh;
-    width: 90%;
-    background-color: antiquewhite;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-}
-
-/* Show upcoming interviews */
-/* Dashboard Container */
 .dashboard_container {
+    max-width: 1200px; /* Adjust max-width as needed */
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 1rem 0;
+}
+
+nav .max-w-7xl {
+    max-width: 1280px; /* Equivalent to max-w-7xl in Tailwind */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav .px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+nav .py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+nav .flex {
     display: flex;
-    height: 80vh;
-  }
-  
-  /* Job Search Section */
-  .job_search {
-    flex: 1;
-    padding: 20px;
-    background-color:#f8f9fa;
+}
+
+nav .items-center {
+    align-items: center;
+}
+
+nav .justify-between {
+    justify-content: space-between;
+}
+
+nav .space-x-2 > * + * {
+    margin-left: 0.5rem;
+}
+
+nav .w-8 {
+    width: 2rem;
+}
+
+nav .h-8 {
+    height: 2rem;
+}
+
+nav .bg-gradient-to-br {
+    background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+}
+
+nav .from-blue-500 {
+    --tw-gradient-from: #3b82f6;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(59, 130, 246, 0));
+}
+
+nav .to-purple-600 {
+    --tw-gradient-to: #9333ea;
+}
+
+nav .rounded-lg {
+    border-radius: 0.5rem;
+}
+
+nav .text-white {
+    color: #fff;
+}
+
+nav .text-xl {
+    font-size: 1.25rem;
+}
+
+nav .font-bold {
+    font-weight: 700;
+}
+
+nav .bg-gradient-to-r {
+    background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+
+nav .from-purple-600 {
+    --tw-gradient-from: #9333ea;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(147, 51, 234, 0));
+}
+
+nav .to-blue-600 {
+    --tw-gradient-to: #2563eb;
+}
+
+nav .bg-clip-text {
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+nav .text-transparent {
+    color: transparent;
+}
+
+nav .gap-6 {
+    gap: 1.5rem;
+}
+
+nav .text-sm {
+    font-size: 0.875rem;
+}
+
+nav .font-medium {
+    font-weight: 500;
+}
+
+nav .text-gray-600 {
+    color: #4b5563;
+}
+
+nav a.hover\:text-blue-600:hover {
+    color: #2563eb;
+}
+
+nav a.transition-colors {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+nav .text-blue-600 {
+    color: #2563eb;
+}
+
+nav .font-semibold {
+    font-weight: 600;
+}
+
+
+/* Welcome Section */
+.welcome {
+    background: linear-gradient(to right, #6d28d9, #9333ea); /* Purple gradient */
+    border-radius: 1.5rem; /* Large rounded corners */
+    padding: 2rem 3rem;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 2rem auto; /* Center the div with margin */
+    max-width: 1200px; /* Match dashboard_container width */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.welcome p:first-child {
+    font-size: 2.25rem; /* Larger font for "Welcome Back, Alex!" */
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.welcome p:last-child {
+    font-size: 1.125rem;
+    opacity: 0.9;
+}
+
+/* Job Search Section */
+.job_search {
+    background-color: white;
+    border-radius: 1.5rem;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    margin-bottom: 2rem; /* Space between job search and submitted jobs */
+}
+
+.job_search .inner_job .top h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1f2937; /* Dark gray */
+    margin-bottom: 1.5rem;
+}
+
+.job_search .middle .relative {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.job_search .middle .absolute {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+}
+
+.job_search .middle .search-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #6b7280; /* Gray icon color */
+}
+
+.job_search .middle .search-input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 3rem; /* Adjust padding for icon */
+    border: 1px solid #d1d5db; /* Light gray border */
+    border-radius: 0.75rem; /* Rounded corners for input */
+    font-size: 1rem;
+    color: #374151;
+    outline: none; /* Remove default outline */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.job_search .middle .search-input::placeholder {
+    color: #9ca3af; /* Placeholder text color */
+}
+
+.job_search .middle .search-input:focus {
+    border-color: #3b82f6; /* Blue on focus */
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2); /* Light blue shadow on focus */
+}
+
+/* Job List and Cards (for search results) */
+.job_list {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 1.5rem;
+}
+
+.job_card {
+    border: 1px solid #e5e7eb;
+    border-radius: 1rem;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 15px;
-   
-  }
-  
-  /* Job Search Header */
-  .top {
+    justify-content: space-between;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.job_card:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+
+.job_card h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #1f2937;
+}
+
+.job_card .flex.items-center.gap-2 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 0.25rem;
+}
+
+.job_card .flex.items-center.gap-2 svg {
+    width: 1rem;
+    height: 1rem;
+    color: #9ca3af;
+}
+
+.job_card .apply_button {
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(to right, #3b82f6, #8b5cf6); /* Blue-purple gradient */
+    color: white;
+    border: none;
+    border-radius: 9999px; /* Full rounded */
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.job_card .apply_button:hover {
+    background: linear-gradient(to right, #2563eb, #7c3aed); /* Darker gradient on hover */
+}
+
+/* Loading Spinner */
+.flex.items-center.justify-center.py-12 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.w-12 {
+    width: 3rem;
+}
+
+.h-12 {
+    height: 3rem;
+}
+
+.border-4 {
+    border-width: 4px;
+}
+
+.border-blue-200 {
+    border-color: #bfdbfe;
+}
+
+.rounded-full {
+    border-radius: 9999px;
+}
+
+.animate-spin {
+    animation: spin 1s linear infinite;
+}
+
+.border-blue-500 {
+    border-color: #3b82f6;
+}
+
+.border-t-transparent {
+    border-top-color: transparent;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* No Jobs Found message */
+.text-center.py-12.text-gray-600 {
+    text-align: center;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    color: #4b5563;
+}
+
+/* My Submitted Jobs Section */
+.applications {
+    margin-top: 3rem;
+}
+
+.applications h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 1.5rem;
+}
+
+/* This is the main change: applying card styles to the list container */
+.application_list {
+    display: grid; /* Use grid for layout */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Responsive grid for submitted jobs */
+    gap: 1.5rem; /* Space between cards */
+    padding: 0; /* Remove padding from the list container itself */
+    background-color: transparent; /* Ensure no background on the grid container */
+    box-shadow: none; /* Remove shadow from the grid container */
+    border-radius: 0;
+}
+
+/* Individual Submitted Job Item */
+.application_item {
+    background-color: white; /* White background for each card */
+    border-radius: 1.25rem; /* Rounded corners for the card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    padding: 1.5rem; /* Padding inside each card */
+    border: 1px solid #e5e7eb; /* Light border */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 120px; /* Ensure a minimum height for consistency */
+}
+
+.application_item:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.application_item .flex.justify-between.items-start {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-  }
-  
-  .application {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  /* Search Container */
-  .middle {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-  }
-  
-  .middle input {
-    flex: 0 0 auto;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .search,
-  .filter {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    height:45px;
-    width: 100px;
-  }
-  .inner_job{
-    height: 270px;
-    width:50%;
-    /* background-color:; */
-    padding:25px;
-    border-radius: 10px;
-    border:2px solid black;
-    margin-top: -270px;
-  
-  }
-  .search-input{
-    width:300px;
-  }
+    align-items: flex-start;
+    flex-grow: 1; /* Allow content to grow */
+}
+
+.application_item p.font-semibold {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 0.25rem;
+}
+
+.application_item p.text-gray-500 {
+    color: #6b7280;
+    margin-bottom: 0.05rem; /* Reduced margin */
+}
+
+.application_item p.text-sm {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-top: 0.5rem; /* Add some space above applied on date */
+}
+
+
+/* Status Badges - New Structure */
+.application_item .status-wrapper {
+    margin-top: 1rem; /* Space between job details and status */
+}
+
+.status-badge {
+    padding: 0.4rem 1rem; /* Increased padding for better look */
+    border-radius: 9999px; /* Fully rounded */
+    font-size: 0.8rem; /* Slightly larger font */
+    font-weight: 600;
+    text-transform: capitalize;
+    display: inline-block;
+    white-space: nowrap; /* Prevent wrapping for status text */
+    min-width: 90px; /* Ensure consistent width for badges */
+    text-align: center;
+}
+
+/* Specific badge colors */
+.status-badge.applied {
+    background-color: #dbeafe; /* Tailwind blue-100 */
+    color: #2563eb; /* Tailwind blue-600 */
+}
+
+.status-badge.under-review {
+    background-color: #fef3c7;
+    color: #d97706; 
+}
+
+.status-badge.interview-scheduled {
+    background-color: #dcfce7; /* Tailwind green-100 */
+    color: #16a34a; /* Tailwind green-600 */
+}
+
+/* If no submitted jobs */
+.applications .text-gray-600 {
+    color: #4b5563;
+    padding: 2rem; /* Add padding similar to a card */
+    background-color: white;
+    border-radius: 1.5rem;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
