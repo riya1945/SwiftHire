@@ -1,71 +1,70 @@
-# Getting Started with Create React App
+# 🚀 SwiftHire – Job Application Tracker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+SwiftHire is a modern, AI-enhanced job application tracker designed to streamline your job search process. Easily track your job applications, analyze resume and skill gaps, and get smart job suggestions—all in one intuitive dashboard
 
-## Available Scripts
+## 🌟 Features
 
-In the project directory, you can run:
+- ✅ User-friendly job application form
+- 📄 Resume upload and parsing 
+- 🔍 Smart Job Matching using JSearch API
+- 📅 Dashboard to track application status
+- ☁️ Supabase backend for secure data storage
+- ✨ Modern React frontend with clean UI
 
-### `npm start`
+## 🧰 Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Frontend**: React, Tailwind CSS, React Router
+- **Backend**: Supabase (PostgreSQL + Auth + Storage)
+- **AI Services**: Gemini API (for resume & skill analysis)
+- **APIs**: JSearch API for job listings
+- **Other Tools**: FastAPI (for additional logic, optional)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🚀 Getting Started
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js & npm
+- Supabase account
+- Gemini API key
+- JSearch API key
 
-### `npm run build`
+### Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/your-username/swifthire.git
+   cd swifthire
+### 2. Install Dependencies
+```bash
+npm install
+```
+### 3. Run the application
+```bash
+npm start
+```
+###Set up environment variables:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Create a .env file and add:
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_KEY=your_supabase_anon_key
+VITE_GEMINI_API_KEY=your_gemini_key
+VITE_JSEARCH_API_KEY=your_jsearch_key
+###AI Integrations
+```
+Skill Gap Analyzer: Compares your skills with job listings
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Smart Job Matcher: Recommends jobs based on your profile
+```
+## About Me
 
-### `npm run eject`
+I are the creator of **SwiftHire – AI-Based Job Application Tracker**, a platform designed to simplify and enhance the job search experience using intelligent automation and data-driven tools.
+**Riya Joshi**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+My goal is to bridge the gap between job seekers and the often overwhelming process of tracking applications, optimizing resumes, and finding relevant opportunities.  
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+SwiftHire empowers users to take control of their career journey by providing:
+- Smart job tracking
+- Skill gap analysis
+- AI-driven job suggestions
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# Alssist
+With a clean interface and powerful backend support, SwiftHire is built to help candidates apply smarter, faster, and more effectively.
