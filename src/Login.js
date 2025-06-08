@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Login.css"; // Keep the CSS import as is
 import { supabase } from './SupabaseClient.js'
 import { useNavigate } from 'react-router-dom';
@@ -10,7 +10,6 @@ function Login() {
   const [password,setPassword]=useState("");
   const navigate = useNavigate();
   const [errormsg,setErrorMsg]=useState("");
-
   const toggleForm = () => {
     setIsSignUp(!isSignUp);
     setErrorMsg("");
