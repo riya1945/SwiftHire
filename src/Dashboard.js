@@ -4,6 +4,7 @@ import { supabase } from "./SupabaseClient";
 import { Link, useNavigate } from 'react-router-dom';
 import { Search, Plus, MapPin, Building2, Zap } from "lucide-react";
 import './Dashboard.css';
+import {getName} from './Profile'
 
 const Dashboard = () => {
   const [query, setQuery] = useState("");
@@ -12,6 +13,33 @@ const Dashboard = () => {
   const [formSubmissions, setFormSubmissions] = useState([]);
   const [userId, setUserId] = useState(null);
   const navigate = useNavigate();
+  const [uid, setUid] = useState(null);
+  const [name,setName]=useState("");
+
+  useEffect(()=>{
+        const getName=async()=>{
+        const {data:{user}}= await supabase.auth.getUser();
+        if(user){
+            setUid(user.id);
+        const {data,error}=await supabase
+        .from("form_submissions")
+        .select('name')
+        .eq("user_id",user.id)
+      //   .single()
+      .limit(1)
+  
+        if(error){
+          console.log("Error fetching your name",error.message);
+        }
+        else{
+          setName(data[0]?.name);
+        }
+        }
+         
+      };
+      getName();
+    },[]
+  );
 
   const fetchFormSubmissions = async (uid) => {
     const { data, error } = await supabase
@@ -101,7 +129,7 @@ const Dashboard = () => {
         </div>
       </nav>
       <div className="welcome">
-        <p>Welcome Back!</p>
+        <h1>Welcome Back ! {name}</h1>
         <p>Ready to find your next opportunity? Lets get started.</p>
 
       </div>

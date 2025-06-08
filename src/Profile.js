@@ -1,22 +1,16 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect } from "react";
 import { User, Mail, Phone, MapPin, Edit3, Camera, Download } from "lucide-react";
 import "./Profile.css";
 import { Link } from 'react-router-dom';
+import { supabase } from "./SupabaseClient";
 
-const SkillBar = ({ skill, level }) => (
-    <div className="skill-bar">
-        <div className="skill-header">
-            <span className="skill-name">{skill}</span>
-            <span className="skill-level">{level}%</span>
-        </div>
-        <div className="skill-track">
-            <div className="skill-fill" style={{ width: `${level}%` }}></div>
-        </div>
-    </div>
-);
 
 const Profile = () => {
     const [isEditing, setIsEditing] = useState(false);
+     const [uid, setUid] = useState(null);
+    const [email,setEmail]=useState("");
+    const [name,setName]=useState("");
+    const [phone,setPhone]=useState("");
     const [profileData, setProfileData] = useState({
         name: "Alex Johnson",
         title: "Senior Full Stack Developer",
@@ -50,7 +44,32 @@ const Profile = () => {
             },
         ],
     });
+     useEffect(()=>{
+      const getName=async()=>{
+      const {data:{user}}= await supabase.auth.getUser();
+      if(user){
+ setUid(user.id);
+      const {data,error}=await supabase
+      .from("form_submissions")
+      .select('name,email,phone')
+      .eq("user_id",user.id)
+      .limit(1)
 
+      if(error){
+        console.log("Error fetching your name",error.message);
+      }
+      else{
+        setName(data[0]?.name);
+        setEmail(data[0]?.email);
+        setPhone(data[0]?.phone);
+        
+      }
+      }
+       
+    };
+    getName();
+  },[]
+);
     const handleEdit = () => {
         setIsEditing(!isEditing);
     };
@@ -101,7 +120,6 @@ const Profile = () => {
 
             <div className="main-content">
                 <div className="grid-container">
-                    {/* Profile Card */}
                     <div className="profile-card">
                         <div className="profile-header"></div>
                         <div className="profile-body">
@@ -115,17 +133,14 @@ const Profile = () => {
                             </div>
 
                             <div className="text-center">
-                                <h1 className="name">{profileData.name}</h1>
+                                  <h1 className="name">{name}</h1>
                                 <p className="title">{profileData.title}</p>
                                 <div className="contact-info">
                                     <div>
-                                        <Mail size={16} /> {profileData.email}
+                                        <Mail size={16} /> {email}
                                     </div>
                                     <div>
-                                        <Phone size={16} /> {profileData.phone}
-                                    </div>
-                                    <div>
-                                        <MapPin size={16} /> {profileData.location}
+                                        <Phone size={16} /> {phone}
                                     </div>
                                 </div>
                             </div>
@@ -140,7 +155,6 @@ const Profile = () => {
                     </div>
 
                     <div className="profile-info">
-                        {/* About */}
                         <div className="section">
                             <h2 className="section-title">About</h2>
                             {isEditing ? (

@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Analytics from "./Analytics";
 import AiAssitant from "./AiAssitant";
 import Profile from "./Profile";
+import Form from "./Form";
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
         <Route path="/analytics" element={<Analytics/>}/>
         <Route path="/aiassitant" element ={<AiAssitant/>}/>
         <Route path="/profile" element={<Profile/>}/>
+        <Route path="/form" element={<Form/>}/>
+
       </Routes>
     </Router>
   );

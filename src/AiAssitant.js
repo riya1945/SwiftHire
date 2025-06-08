@@ -187,7 +187,6 @@ const AiAssistant = () => {
             <p className="text-sm font-semibold text-gray-700 mt-1">{job.salary}</p>
           </div>
         </div>
-        
         <div className="flex flex-wrap gap-2 mb-4">
           {job.skills.map((skill, idx) => (
             <span
@@ -198,17 +197,11 @@ const AiAssistant = () => {
             </span>
           ))}
         </div>
-        
-        <button className="flex items-center text-purple-600 hover:text-purple-800 font-semibold group-hover:translate-x-1 transition-all duration-200">
-          View Details <ArrowRight className="w-4 h-4 ml-1" />
-        </button>
       </div>
     </div>
   );
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100">
-      {/* Enhanced Navigation */}
       <nav className="bg-white/80 backdrop-blur-lg border-b border-gray-200/50 sticky top-0 z-50 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
@@ -242,11 +235,7 @@ const AiAssistant = () => {
           </div>
         </div>
       </nav>
-
-      {/* Chat Container */}
       <div className="flex flex-col h-[calc(100vh-80px)]">
-
-        {/* Messages */}
         <div className="flex-1 overflow-y-auto px-6 py-6">
           <div className="max-w-4xl mx-auto space-y-6">
             {messages.map((message, index) => (
@@ -287,8 +276,6 @@ const AiAssistant = () => {
                 </div>
               </div>
             ))}
-
-            {/* Popular Skills Section */}
             {currentStep === "collecting" && messages.length === 2 && (
               <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-100 shadow-sm">
                 <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
@@ -308,8 +295,6 @@ const AiAssistant = () => {
                 </div>
               </div>
             )}
-
-            {/* User Skills Display */}
             {userSkills.length > 0 && (
               <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-100 shadow-sm">
                 <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
@@ -329,8 +314,6 @@ const AiAssistant = () => {
                 </div>
               </div>
             )}
-
-            {/* Job Recommendations */}
             {currentStep === "complete" && (
               <div className="space-y-6">
                 <div className="text-center">
@@ -346,8 +329,6 @@ const AiAssistant = () => {
                 </div>
               </div>
             )}
-
-            {/* Typing Indicator */}
             {isTyping && (
               <div className="flex justify-start">
                 <div className="flex items-start gap-4 max-w-2xl">
@@ -374,8 +355,6 @@ const AiAssistant = () => {
             <div ref={messagesEndRef} />
           </div>
         </div>
-
-        {/* Enhanced Input Area */}
         <div className="bg-white/90 backdrop-blur-sm border-t border-gray-200/50 px-6 py-6">
           <div className="max-w-4xl mx-auto">
             <div className="flex items-end gap-4">
