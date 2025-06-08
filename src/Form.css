@@ -1,15 +1,12 @@
-/* Form.css */
-
 .form-wrapper {
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #6366F1 0%, #7C3AED 50%, #8B5CF6 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
 .form-container {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
@@ -21,7 +18,6 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
   animation: fadeIn 0.8s ease-out;
 }
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -270,8 +266,6 @@
   animation: spin 1s linear infinite;
   margin-bottom: 20px;
 }
-
-/* Responsive Design */
 @media (max-width: 480px) {
   .form-container {
     padding: 25px;
@@ -287,21 +281,17 @@
   }
   
   .form-input {
-    font-size: 16px; /* Prevents zoom on iOS */
+    font-size: 16px; 
   }
 }
-
-/* Dark mode support */
 @media (prefers-color-scheme: dark) {
   .form-container {
     background: rgba(45, 55, 70, 0.95);
     color: #e2e8f0;
   }
-  
   .form-title {
     color: #e2e8f0;
   }
-  
   .job-details {
     background: linear-gradient(135deg, #2d3748, #4a5568);
     color: #e2e8f0;

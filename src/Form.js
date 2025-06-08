@@ -7,6 +7,7 @@ const ApplyForm = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     resumeFile: null,
   });
 
@@ -18,7 +19,6 @@ const ApplyForm = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const job = location.state?.job;
-
   const jobTitle = job?.job_title || '';
   const companyName = job?.employer_name || '';
 
@@ -36,7 +36,7 @@ const ApplyForm = () => {
   }, []);
 
   const handleChange = (e) => {
-    const { name, value, files } = e.target;
+    const { name, value, files,number} = e.target;
     if (name === 'resumeFile') {
       setFormData((prev) => ({ ...prev, resumeFile: files[0] }));
     } else {
@@ -108,6 +108,7 @@ const ApplyForm = () => {
         {
           name: formData.name,
           email: formData.email,
+          phone: formData.phone, 
           resume_url: resumeUrl,
           user_id: userId,
           job_title: jobTitle,
@@ -172,6 +173,17 @@ const ApplyForm = () => {
               name="email"
               className="form-input"
               value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label className="form-label">Phone Number:</label>
+            <input
+              type="tel"
+              name="phone"
+              className="form-input"
+              value={formData.phone}
               onChange={handleChange}
               required
             />
