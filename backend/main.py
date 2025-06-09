@@ -3,7 +3,8 @@ from fastapi.middleware.cors import CORSMiddleware
 import requests
 import os
 from dotenv import load_dotenv
-from backend.jobs import router as jobs_router
+# from backend.jobs import router as jobs_router
+from jobs import jobs_router 
 
 
 load_dotenv()
