@@ -4,12 +4,12 @@ import requests
 import os
 from dotenv import load_dotenv
 # from backend.jobs import router as jobs_router
-from jobs import jobs_router 
+from jobs import router 
 
 
 load_dotenv()
 app = FastAPI()
-app.include_router(jobs_router)
+app.include_router(router)
 
 
 # Enable CORS for React frontend (adjust origin in prod)
