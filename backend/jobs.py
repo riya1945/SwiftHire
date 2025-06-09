@@ -26,13 +26,30 @@ class Job(BaseModel):
     publisher_name: str
 
 @router.get("/", response_class=HTMLResponse)
-
+async def read_root_html():
+    """
+    Returns a simple HTML page for the root endpoint of this router.
+    """
+    return """
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Job Search API</title>
+    </head>
+    <body>
+        <h1>Welcome to the Job Search API!</h1>
+        <p>This is the root of the jobs router.</p>
+        <p>Try accessing endpoints like <code>/external-jobs?query=python</code> or <code>/jobs</code>.</p>
+    </body>
+    </html>
+    """
+# Rest of your code follows...
 @router.post("/jobs/salary")
 def add_job(job: Job):
     job_data = job.dict()
-    job_data.pop("median_salary") 
+    job_data.pop("median_salary")
     response = supabase.table("job_applications").insert(job_data).execute()
-    if response["error"]:
+    if response.get("error"): # Use .get() for safer access
         raise HTTPException(status_code=500, detail=str(response["error"]))
     return {"message": "Job added successfully", "data": response["data"]}
 
@@ -40,9 +57,12 @@ def add_job(job: Job):
 def get_job():
     try:
         response = supabase.table("job_applications").select("*").execute()
-        if getattr(response, "error", None):
-            raise HTTPException(status_code=500, detail=str(response.error))
-        return getattr(response, "data", [])
+        # Direct access to .error and .data is safer with 'getattr' or checking if it's a dict
+        if hasattr(response, "error") and response.error: 
+             raise HTTPException(status_code=500, detail=str(response.error))
+        elif isinstance(response, dict) and response.get("error"): # For dictionary responses
+            raise HTTPException(status_code=500, detail=str(response["error"]))
+        return getattr(response, "data", []) or response.get("data", []) # Handle both object and dict
     except Exception as e:
         raise HTTPException(status_code=500, detail="Failed to fetch jobs.")
 
@@ -50,9 +70,11 @@ def get_job():
 def get_job_by_title_and_loc(title: str, location: str):
     try:
         result = supabase.table("job_applications").select("*").eq("job_title", title).eq("location", location).execute()
-        if getattr(result, "error", None):
+        if hasattr(result, "error") and result.error:
             raise HTTPException(status_code=500, detail=str(result.error))
-        return getattr(result, "data", [])
+        elif isinstance(result, dict) and result.get("error"):
+            raise HTTPException(status_code=500, detail=str(result["error"]))
+        return getattr(result, "data", []) or result.get("data", [])
     except Exception as e:
         raise HTTPException(status_code=500, detail="Internal server error occurred")
 
@@ -70,7 +92,7 @@ async def get_jobs_from_jsearch(query: str = Query(...)):
             response = await client.get(url, headers=headers, params=params)
 
         if response.status_code != 200:
-            raise HTTPException(status_code=500, detail=f"JSearch API failed: {response.text}")   
+            raise HTTPException(status_code=500, detail=f"JSearch API failed: {response.text}")
         data = response.json()
         extracted_jobs = []
         for job in data.get("data", []):
@@ -80,7 +102,7 @@ async def get_jobs_from_jsearch(query: str = Query(...)):
                 "job_title": job.get("job_title"),
                 "location": job.get("job_city", "NA"),
                 "min_salary": min_salary,
-                "max_salary": max_salary,
+                "max_salary": max_salary, 
                 "median_salary": (min_salary + max_salary) / 2 if min_salary and max_salary else 0,
                 "publisher_name": job.get("employer_name", "Unknown")
             })
