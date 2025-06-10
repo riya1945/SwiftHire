@@ -3,7 +3,6 @@
 SwiftHire is a modern, AI-enhanced job application tracker designed to **streamline your job search process**. Say goodbye to scattered spreadsheets and endless tabs. With SwiftHire, you can easily track your job applications, analyze resume and skill gaps, and get smart job suggestions—all within one intuitive dashboard.
 
 ---
-
 ## 🌟 Features
 
 - ✅ User-friendly job application form
@@ -47,14 +46,15 @@ npm install
 npm start
 ```
 ---
-###Set up environment variables:
-
+### Set up environment variables:
+```
 Create a .env file and add:
-VITE_SUPABASE_URL=your_supabase_url
-VITE_SUPABASE_KEY=your_supabase_anon_key
-VITE_GEMINI_API_KEY=your_gemini_key
-VITE_JSEARCH_API_KEY=your_jsearch_key
-###AI Integrations
+REACT_SUPABASE_URL=your_supabase_url
+REACT_SUPABASE_KEY=your_supabase_anon_key
+REACT_GEMINI_API_KEY=your_gemini_key
+REACT_JSEARCH_API_KEY=your_jsearch_key
+```
+## AI Integrations
 ```
 Skill Gap Analyzer: Compares your skills with job listings
 
