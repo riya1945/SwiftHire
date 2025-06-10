@@ -1,18 +1,13 @@
-import axios from 'axios';
+const BACKEND_BASE_URL = "https://swifthire-backend.onrender.com"; 
 
-const JSEARCH_API_KEY = process.env.REACT_APP_JSEARCH_API_KEY;
-const JSEARCH_HOST = process.env.REACT_APP_JSEARCH_HOST;
 export const fetchJobs = async (query) => {
   try {
-    const response = await axios.get('https://jsearch.p.rapidapi.com/search', {
-      params: { query },
-      headers: {
-        'X-RapidAPI-Key': JSEARCH_API_KEY,
-        'X-RapidAPI-Host': JSEARCH_HOST,
-      },
-    });
-    return response.data.data || [];
+    const response = await fetch(`${BACKEND_BASE_URL}/external-jobs?query=${query}`);
+    if (!response.ok) throw new Error("Failed to fetch jobs");
+    const data = await response.json();
+    return data || [];
   } catch (error) {
+    console.error("Error fetching jobs:", error);
     return [];
   }
 };

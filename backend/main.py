@@ -1,21 +1,21 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-import requests
 import os
+import httpx
 from dotenv import load_dotenv
-# from backend.jobs import router as jobs_router
-from jobs import router 
-
+from jobs import router  
 
 load_dotenv()
+
 app = FastAPI()
 app.include_router(router)
 
-
-# Enable CORS for React frontend (adjust origin in prod)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # React dev server
+    allow_origins=[
+        "http://localhost:3000",                
+        "https://swift-hire-apbiiw14q-riyas-projects-1bdb284c.vercel.app/"  
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
