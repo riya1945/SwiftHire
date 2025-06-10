@@ -1,6 +1,14 @@
 # 🚀 SwiftHire – Job Application Tracker
 
-SwiftHire is a modern, AI-enhanced job application tracker designed to streamline your job search process. Easily track your job applications, analyze resume and skill gaps, and get smart job suggestions—all in one intuitive dashboard
+SwiftHire is a modern, AI-enhanced job application tracker designed to **streamline your job search process**. Say goodbye to scattered spreadsheets and endless tabs. With SwiftHire, you can easily track your job applications, analyze resume and skill gaps, and get smart job suggestions—all within one intuitive dashboard.
+
+---
+## Screenshots
+
+![image](https://github.com/user-attachments/assets/5beb08aa-6155-4a2c-8966-bf0c0ef88d83)
+![image](https://github.com/user-attachments/assets/35fbaad5-3425-4409-8e68-330089a980c2)
+![image](https://github.com/user-attachments/assets/53f60f46-0865-45b9-8230-17854d9c1e0f)
+![image](https://github.com/user-attachments/assets/5ca01122-f929-4b5f-9fa7-42ad255030b0)
 
 ## 🌟 Features
 
@@ -10,6 +18,8 @@ SwiftHire is a modern, AI-enhanced job application tracker designed to streamlin
 - 📅 Dashboard to track application status
 - ☁️ Supabase backend for secure data storage
 - ✨ Modern React frontend with clean UI
+
+  ---
 
 ## 🧰 Tech Stack
 
@@ -22,11 +32,11 @@ SwiftHire is a modern, AI-enhanced job application tracker designed to streamlin
 ## 🚀 Getting Started
 
 ### Prerequisites
+* **Node.js & npm**: [Download Node.js](https://nodejs.org/)
+* **Supabase Account**: [Sign up for Supabase](https://supabase.com/)
+* **Gemini API Key**: [Get your Gemini API Key](https://ai.google.dev/)
+* **JSearch API Key**: [Obtain a JSearch API Key](https://jsearch.p.rapidapi.com/)
 
-- Node.js & npm
-- Supabase account
-- Gemini API key
-- JSearch API key
 
 ### Installation
 
@@ -42,6 +52,7 @@ npm install
 ```bash
 npm start
 ```
+---
 ###Set up environment variables:
 
 Create a .env file and add:
@@ -55,16 +66,11 @@ Skill Gap Analyzer: Compares your skills with job listings
 
 Smart Job Matcher: Recommends jobs based on your profile
 ```
-## About Me
-
-I are the creator of **SwiftHire – AI-Based Job Application Tracker**, a platform designed to simplify and enhance the job search experience using intelligent automation and data-driven tools.
-**Riya Joshi**
-
-My goal is to bridge the gap between job seekers and the often overwhelming process of tracking applications, optimizing resumes, and finding relevant opportunities.  
+### 👩‍💻 About the Creator
+Hi, I'm Riya Joshi, the creator of SwiftHire – AI-Based Job Application Tracker. My goal is to bridge the gap between job seekers and the often overwhelming process of tracking applications, optimizing resumes, and finding relevant opportunities.
 
 SwiftHire empowers users to take control of their career journey by providing:
-- Smart job tracking
-- Skill gap analysis
-- AI-driven job suggestions
 
+Smart job tracking
+AI-driven job suggestions
 With a clean interface and powerful backend support, SwiftHire is built to help candidates apply smarter, faster, and more effectively.
