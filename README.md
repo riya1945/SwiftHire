@@ -3,12 +3,6 @@
 SwiftHire is a modern, AI-enhanced job application tracker designed to **streamline your job search process**. Say goodbye to scattered spreadsheets and endless tabs. With SwiftHire, you can easily track your job applications, analyze resume and skill gaps, and get smart job suggestions—all within one intuitive dashboard.
 
 ---
-## Screenshots
-
-![image](https://github.com/user-attachments/assets/5beb08aa-6155-4a2c-8966-bf0c0ef88d83)
-![image](https://github.com/user-attachments/assets/35fbaad5-3425-4409-8e68-330089a980c2)
-![image](https://github.com/user-attachments/assets/53f60f46-0865-45b9-8230-17854d9c1e0f)
-![image](https://github.com/user-attachments/assets/5ca01122-f929-4b5f-9fa7-42ad255030b0)
 
 ## 🌟 Features
 
