@@ -35,6 +35,7 @@ function Login() {
       setEmail("");
     setPassword("");
     setName("")
+    setIsSignUp(false);
     }
   }
 const handleLogin=async(e) =>{
