@@ -13,8 +13,8 @@ app.include_router(router)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:3000",                
-        "https://swift-hire-apbiiw14q-riyas-projects-1bdb284c.vercel.app/"  
+        "http://localhost:3000",
+        "https://swift-hire-delta.vercel.app" 
     ],
     allow_credentials=True,
     allow_methods=["*"],
