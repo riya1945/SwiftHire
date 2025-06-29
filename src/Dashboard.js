@@ -182,19 +182,17 @@ const Dashboard = () => {
       </h3>
 
       <div className="flex items-center gap-2 text-sm text-gray-500 mb-1">
-        <Building2 className="w-4 h-4" />
-        <span>{job.employer_name || "Unknown Company"}</span>
-      </div>
-
-      <div className="flex items-center gap-2 text-sm text-gray-500 mb-1">
-        <MapPin className="w-4 h-4" />
-        <span>{job.job_city || "Location not specified"}</span>
-      </div>
-
-      <div className="flex items-center gap-2 text-sm text-gray-500 mb-2">
-        <Zap className="w-4 h-4" />
-        <span>{job.job_employment_type || "Job type not specified"}</span>
-      </div>
+  <Building2 className="w-4 h-4" />
+  <span>{job.employer_name || "Unknown Company"}</span>
+</div>
+<div className="flex items-center gap-2 text-sm text-gray-500 mb-1">
+  <MapPin className="w-4 h-4" />
+  <span>{job.job_city || "Location not specified"}</span>
+</div>
+<div className="flex items-center gap-2 text-sm text-gray-500 mb-2">
+  <Zap className="w-4 h-4" />
+  <span>{job.job_employment_type || "Job type not specified"}</span>
+</div>
     </div>
 
     <button
