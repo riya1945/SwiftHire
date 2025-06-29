@@ -170,34 +170,43 @@ const Dashboard = () => {
 
           {!loading && jobs.length > 0 && (
             <div className="job_list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
+
               {jobs.map((job) => (
-                <div
-                  key={job.id}
-                  className="job_card border rounded-xl p-6 flex flex-col justify-between bg-white shadow-md transition-transform hover:-translate-y-1 hover:shadow-lg cursor-pointer"
-                >
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2 text-gray-800">{job.job_title}</h3>
-                    <div className="flex items-center gap-2 text-sm text-gray-500 mb-1">
-                      <Building2 className="w-4 h-4" />
-                      <span>{job.employer_name}</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-sm text-gray-500 mb-1">
-                      <MapPin className="w-4 h-4" />
-                      <span>{job.job_city}</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-sm text-gray-500 mb-2">
-                      <Zap className="w-4 h-4" />
-                      <span>{job.job_category}</span>
-                    </div>
-                  </div>
-                  <button
-                    className="apply_button mt-4 py-2 px-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full hover:from-blue-600 hover:to-purple-700 transition-colors duration-300"
-                    onClick={() => handleApply(job)}
-                  >
-                    Apply
-                  </button>
-                </div>
-              ))}
+  <div
+    key={job.job_id}
+    className="job_card border rounded-xl p-6 flex flex-col justify-between bg-white shadow-md transition-transform hover:-translate-y-1 hover:shadow-lg cursor-pointer"
+  >
+    <div>
+      <h3 className="text-lg font-semibold mb-2 text-gray-800">
+        {job.job_title || "Job title not available"}
+      </h3>
+
+      <div className="flex items-center gap-2 text-sm text-gray-500 mb-1">
+        <Building2 className="w-4 h-4" />
+        <span>{job.employer_name || "Unknown Company"}</span>
+      </div>
+
+      <div className="flex items-center gap-2 text-sm text-gray-500 mb-1">
+        <MapPin className="w-4 h-4" />
+        <span>{job.job_city || "Location not specified"}</span>
+      </div>
+
+      <div className="flex items-center gap-2 text-sm text-gray-500 mb-2">
+        <Zap className="w-4 h-4" />
+        <span>{job.job_employment_type || "Job type not specified"}</span>
+      </div>
+    </div>
+
+    <button
+      className="apply_button mt-4 py-2 px-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full hover:from-blue-600 hover:to-purple-700 transition-colors duration-300"
+      onClick={() => handleApply(job)}
+    >
+      Apply
+    </button>
+  </div>
+))}
+
+
             </div>
           )}
 
