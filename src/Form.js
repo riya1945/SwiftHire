@@ -20,7 +20,7 @@ const ApplyForm = () => {
   const location = useLocation();
   const job = location.state?.job;
   const jobTitle = job?.job_title || '';
-  const companyName = job?.employer_name || '';
+ const companyName = job?.publisher_name || '';
 
   useEffect(() => {
     const fetchUser = async () => {

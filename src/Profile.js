@@ -12,35 +12,35 @@ const Profile = () => {
     const [name,setName]=useState("");
     const [phone,setPhone]=useState("");
     const [profileData, setProfileData] = useState({
-        name: "Alex Johnson",
-        title: "Senior Full Stack Developer",
-        email: "alex.johnson@email.com",
-        phone: "+1 (555) 123-4567",
-        location: "San Francisco, CA",
+        name: "",
+        title: "",
+        email: "",
+        phone: "",
+        location: "",
         about:
-            "Passionate full-stack developer with 5+ years of experience building scalable web applications. Specialized in React, Node.js, and cloud technologies. Always eager to learn new technologies and solve complex problems.",
+            "",
         experience: [
             {
-                company: "TechCorp Inc.",
-                position: "Senior Full Stack Developer",
-                duration: "2022 - Present",
+                company: "",
+                position: "",
+                duration: "",
                 description:
-                    "Lead development of customer-facing applications serving 100K+ users. Implemented microservices architecture reducing load times by 40%.",
+                    "",
             },
             {
-                company: "StartupXYZ",
-                position: "Full Stack Developer",
-                duration: "2020 - 2022",
+                company: "",
+                position: "",
+                duration: "",
                 description:
-                    "Built and maintained e-commerce platform. Collaborated with cross-functional teams to deliver features ahead of schedule.",
+                    "",
             },
         ],
         education: [
             {
-                school: "University of California, Berkeley",
-                degree: "Bachelor of Science in Computer Science",
-                year: "2016 - 2020",
-                gpa: "3.8/4.0",
+                school: "",
+                degree: "",
+                year: "",
+                gpa: "",
             },
         ],
     });
@@ -123,34 +123,43 @@ const Profile = () => {
                     <div className="profile-card">
                         <div className="profile-header"></div>
                         <div className="profile-body">
-                            <div className="avatar-container">
-                                <div className="avatar">
-                                    <User size={48} />
-                                    <button className="camera-btn">
-                                        <Camera size={16} />
-                                    </button>
-                                </div>
+                           <div className="profile-body">
+  <div className="avatar-container">
+    {/* <div className="avatar">
+      <User size={48} />
+      <button className="camera-btn">
+        <Camera size={16} />
+      </button>
+    </div> */}
+  </div>
+
+  <div className="flex flex-col items-center justify-center text-center mt-4">
+    <h1 className="text-2xl font-bold text-gray-800 mb-1">{name}</h1>
+    <p className="text-sm text-gray-500 mb-4">{profileData.title}</p>
+
+    <div className="flex flex-col items-center gap-2 text-sm text-gray-600">
+      <div className="flex items-center gap-2">
+        <Mail className="w-4 h-4" />
+        <span>{email}</span>
+      </div>
+      <div className="flex items-center gap-2">
+        <Phone className="w-4 h-4" />
+        <span>{phone}</span>
+      </div>
+    </div>
+  </div>
+
+  <div className="action-buttons">
+    <button onClick={handleEdit} className="edit-btn">
+      <Edit3 size={16} />
+      <span>{isEditing ? "Save" : "Edit Profile"}</span>
+    </button>
+  </div>
+
+
                             </div>
 
-                            <div className="text-center">
-                                  <h1 className="name">{name}</h1>
-                                <p className="title">{profileData.title}</p>
-                                <div className="contact-info">
-                                    <div>
-                                        <Mail size={16} /> {email}
-                                    </div>
-                                    <div>
-                                        <Phone size={16} /> {phone}
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="action-buttons">
-                                <button onClick={handleEdit} className="edit-btn">
-                                    <Edit3 size={16} />
-                                    <span>{isEditing ? "Save" : "Edit Profile"}</span>
-                                </button>
-                            </div>
+                           
                         </div>
                     </div>
 
@@ -274,7 +283,7 @@ const Profile = () => {
                                             <h3>{edu.degree}</h3>
                                             <p className="school">{edu.school}</p>
                                             <div className="details">
-                                                <span>{edu.year}</span> <span>GPA: {edu.gpa}</span>
+                                                <span>{edu.year}</span> <span> {edu.gpa}</span>
                                             </div>
                                         </>
                                     )}

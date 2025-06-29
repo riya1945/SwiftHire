@@ -171,29 +171,36 @@ const Dashboard = () => {
           {!loading && jobs.length > 0 && (
             <div className="job_list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
 
-              {jobs.map((job) => (
+              {jobs.map((job,index) => (
                 
   <div
-    key={job.job_id}
+     key={job.job_id || `${job.job_title}-${index}`}
     className="job_card border rounded-xl p-6 flex flex-col justify-between bg-white shadow-md transition-transform hover:-translate-y-1 hover:shadow-lg cursor-pointer"
   >
     <div>
       <h3 className="text-lg font-semibold mb-2 text-gray-800">
-        {job.job_title || "Job title not available"}
-      </h3>
+  {job.job_title || "Job title not available"}
+</h3>
 
-      <div className="flex items-center gap-2 text-sm text-gray-500 mb-1">
+<div className="flex items-center gap-2 text-sm text-gray-500 mb-1">
   <Building2 className="w-4 h-4" />
-  <span>{job.employer_name || "Unknown Company"}</span>
+  <span>{job.publisher_name || "Company not specified"}</span>
 </div>
+
 <div className="flex items-center gap-2 text-sm text-gray-500 mb-1">
   <MapPin className="w-4 h-4" />
-  <span>{job.job_city || "Location not specified"}</span>
+  <span>{job.location || "Location not specified"}</span>
 </div>
+
 <div className="flex items-center gap-2 text-sm text-gray-500 mb-2">
   <Zap className="w-4 h-4" />
-  <span>{job.job_employment_type || "Job type not specified"}</span>
+  <span>
+    {job.min_salary || job.max_salary
+      ? `₹${job.min_salary ?? "?"} - ₹${job.max_salary ?? "?"}`
+      : "Salary not specified"}
+  </span>
 </div>
+
     </div>
 
     <button

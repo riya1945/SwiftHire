@@ -63,25 +63,18 @@ const handleLogin=async(e) =>{
         {isSignUp && (
           <div className="login-form-group">
             <label htmlFor="name">Full Name</label>
-            <input type="text" name="name" id="name"value={name} placeholder="John Doe" onChange={(e)=>setName(e.target.value)}/>
+            <input type="text" name="name" id="name"value={name}  onChange={(e)=>setName(e.target.value)}/>
           </div>
         )}
 
         <div className="login-form-group">
           <label htmlFor="email">Email Address</label>
-          <input type="email" name="email" id="email"  value={email} placeholder="example@email.com"onChange={(e)=>setEmail(e.target.value)} />
+          <input type="email" name="email" id="email"  value={email} onChange={(e)=>setEmail(e.target.value)} />
         </div>
 
         <div className="login-form-group">
           <label htmlFor="pass">Password</label>
           <input type="password" name="pass" id="pass" value={password} placeholder="••••••••" onChange={(e)=>setPassword(e.target.value)}/>
-        </div>
-
-        <div className="login-options">
-          <label className="login-remember">
-            <input type="checkbox" /> Remember me
-          </label>
-          <a href="#" className="login-forgot">Forgot password?</a>
         </div>
         {errormsg && (
             <div className="login-error-message">
@@ -93,7 +86,7 @@ const handleLogin=async(e) =>{
 
         <p className="login-footer">
           {isSignUp ? (
-            <>Already have an account? <span className="login-toggle" onClick={toggleForm}>Sign in</span></>
+            <>Already have an account? <span className="login-toggle" onClick={toggleForm}>Log in</span></>
           ) : (
             <>Don’t have an account? <span className="login-toggle" onClick={toggleForm}>Sign up</span></>
           )}
