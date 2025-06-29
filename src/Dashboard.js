@@ -172,6 +172,7 @@ const Dashboard = () => {
             <div className="job_list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
 
               {jobs.map((job) => (
+                
   <div
     key={job.job_id}
     className="job_card border rounded-xl p-6 flex flex-col justify-between bg-white shadow-md transition-transform hover:-translate-y-1 hover:shadow-lg cursor-pointer"
